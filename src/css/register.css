@@ -1,0 +1,64 @@
+.register-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+        rgba(255, 255, 255, 0.7),
+        rgba(255, 255, 255, 0.3)
+      ),
+      url("https://images.pexels.com/photos/114979/pexels-photo-114979.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+    background-size: cover;
+    background-position: center;   
+}
+  
+.form-class{
+    width: 700px;
+    background-color: white;
+    padding: 0px 32px;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+  
+.h2-class{
+    color: rgb(239, 185, 37);
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.formInput{
+    display: flex;
+    width: 580px;
+}
+
+.input-class{
+    padding: 15px;
+    margin: 10px 0px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    width: 230px;
+}
+
+.label-class{
+    font-size: 12px;
+    color: gray;
+}
+
+.span-class{
+    font-size: 12px;
+    padding: 3px;
+    color: red;
+}
+
+.input-class:invalid[focused="true"]{
+    border: 1px solid red;
+}
+.input-class:valid[focused="false"]{
+    border: 1px solid green;
+}
+
+.input-class:invalid[focused="true"] ~ span-class{
+    display: block;
+}
