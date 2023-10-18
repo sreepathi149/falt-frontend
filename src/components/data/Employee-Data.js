@@ -151,7 +151,7 @@ const EmployeeData = () => {
                 </tr>
             </thead>
             <tbody>
-                {employees.filter(emp1 => emp1.role === "fieldAgent").map((emp, index) => {
+                {employees.filter(emp1 => emp1.role === "fieldAgent" && emp1.reportTo === tokenData.id).map((emp, index) => {
                     return (
                         <tr key={emp._id}>
                             <td>{index + 1}</td>

@@ -29,7 +29,7 @@ const ResetPassword = () => {
         if(newPassword === confirmNewPassword) {
             const loader = async () => {
                 try{
-                    const response = await axios.put('https://falt.onrender.com/api/user/reset-password', data, {
+                    const response = await axios.put('http://localhost:4455/api/user/reset-password', data, {
                         headers: {
                             'authorization' : localStorage.getItem('token')
                         }

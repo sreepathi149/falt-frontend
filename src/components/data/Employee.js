@@ -8,7 +8,7 @@ import { Link, useParams } from "react-router-dom"
 const Employee = () => {
     const {employeeId} = useParams()
     const [employee, setEmployee] = useState({})
-    const [company, setCompany] = useState({})
+    //const [company, setCompany] = useState({})
 
     const data = useSelector((state) => {
         return state.data.data
@@ -40,7 +40,7 @@ const Employee = () => {
     useEffect(() => {
         const loader = async () => {
             try {
-                const response = await axios.get(`https://falt.onrender.com/api/employee/${employeeId}`, {
+                const response = await axios.get(`http://localhost:4455/api/employee/${employeeId}`, {
                     headers: {
                         'authorization' : localStorage.getItem('token')
                     }
@@ -86,7 +86,10 @@ const Employee = () => {
                         <h5> Tasks Assigned </h5><hr/>
                             <Row ><Col className="d-flex justify-content-center"><h6>Name</h6></Col><Col className="d-flex justify-content-center">DueDate</Col><Col className="d-flex justify-content-center"><h6>status</h6></Col></Row> 
                             {tasks.map((task) => {
-                                return <Row key={task._id}><Col className="d-flex justify-content-center">{task.title}</Col><Col className="d-flex justify-content-center">{task.dueDate.split('T')[0]}</Col><Col className="d-flex justify-content-center">{task.status}</Col></Row>
+                                return <Row key={task._id}>
+                                    <Col className="d-flex justify-content-center">{task.title}</Col>
+                                    <Col className="d-flex justify-content-center">{task.dueDate.split('T')[0]}</Col>
+                                    <Col className="d-flex justify-content-center">{task.status}</Col></Row>
                             })}
                     </Card.Body>
                 </Card>

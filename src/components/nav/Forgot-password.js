@@ -30,7 +30,7 @@ const ForgotPassword = () => {
         }
         const loader = async () => {
             try{
-                const response = await axios.put('https://falt.onrender.com/api/user/forgot-password', data)
+                const response = await axios.put('http://localhost:4455/api/user/forgot-password', data)
                 //console.log(response.data) 
                 if(response) {
                     alert('Otp sent successfully')
@@ -50,7 +50,7 @@ const ForgotPassword = () => {
         if(newPassword === confirmNewPassword) {
             const loader = async () => {
                 try{
-                    const response = await axios.put('https://falt.onrender.com/api/user/verify-otp-password', data)
+                    const response = await axios.put('http://localhost:4455/api/user/verify-otp-password', data)
                     //console.log(response.data)
                     if(response) {
                         alert('successfully updated Password')

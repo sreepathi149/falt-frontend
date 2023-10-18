@@ -1,4 +1,4 @@
-import {Container, Row, Col, Form} from 'react-bootstrap'
+import {Container, Row, Col} from 'react-bootstrap'
 import { useEffect, useState } from 'react'
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css'
@@ -142,7 +142,7 @@ const navigate = useNavigate()
         if(Object.keys(errors).length === 0) {
             const loader = async () => {
                 try{
-                    const response = await axios.post('https://falt.onrender.com/api/user/register', formData)
+                    const response = await axios.post('http://localhost:4455/api/user/register', formData)
                     console.log(response.data)
                     if(response.data.hasOwnProperty("user")) {
                         alert('successfully registered with us')
@@ -178,7 +178,7 @@ const navigate = useNavigate()
                                             focused={focused.toString()}
                                         /> 
                                     </label><br/>
-                                    {username.length ==0 ? <span className='span-class'> {errors.username} </span> : null}
+                                    {errors.username ? <span className='span-class'> {errors.username} </span> : null}
                                 </Col>
                                 <Col>
                                     <label className='label-class'> Email <br/>

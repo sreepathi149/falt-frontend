@@ -1,10 +1,7 @@
 import Map from "../maps/Map-data";
 import {useSelector} from 'react-redux'
 import jwtDecode from "jwt-decode";
-import ClientsLocation from "../maps/Client-location";
-import AgentLocation from "../maps/Agents-location";
 import { Tab, Tabs } from "react-bootstrap";
-import { useEffect } from "react";
 
 const TrackClient = () => {
   const data = useSelector((state) => {
@@ -33,20 +30,6 @@ const TrackClient = () => {
                         {tokenData.role === 'fieldAgent' ? <Map clients={clientLocationsF}/> : null }
                       </div>
                     </Tab>
-                    <Tab eventKey="Clients" title="Clients">
-                      <div className="mt-3">
-                        <h3> Locations </h3>
-                        {tokenData.role === 'admin' ? <ClientsLocation clients={clientLocationsA} /> : null }
-                        {tokenData.role === 'manager' ? <ClientsLocation clients={clientLocationsM} /> : null }
-                      </div>
-                    </Tab>  
-                    {tokenData.role === 'fieldAgent' ? null : <Tab eventKey="Agents" title="Agents">
-                      <div className="mt-3">
-                        <h3> Locations </h3>
-                        {tokenData.role === 'admin' ? <AgentLocation  employees={employeeLocationsA}/> : null }
-                        {tokenData.role === 'manager' ? <AgentLocation  employees={employeeLocationsM}/> : null }
-                      </div>
-                    </Tab>}
                 </Tabs>   
                   
 

@@ -17,7 +17,7 @@ const ViewClient = () => {
     useEffect(() => {
         const loader = async () => {
             try {
-                const response = await axios.get(`https://falt.onrender.com/api/tasks/${taskId}`, {
+                const response = await axios.get(`http://localhost:4455/api/tasks/${taskId}`, {
                     headers: {
                         'authorization' : localStorage.getItem('token')
                     }

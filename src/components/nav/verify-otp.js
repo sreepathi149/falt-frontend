@@ -31,7 +31,7 @@ const VerifyLogin = (props) => {
         if(otp){
             const loader = async () => {
                 try {
-                    const response = await axios.post('https://falt.onrender.com/api/user/verify-login', formData, {
+                    const response = await axios.post('http://localhost:4455/api/user/verify-login', formData, {
                         headers: {
                             'authorization' : localStorage.getItem('token')
                         }})

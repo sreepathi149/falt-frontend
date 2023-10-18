@@ -37,9 +37,9 @@ const TasksGraph = () => {
     const cTF = completedTasksF.length/tasks.length * 100
     const dTF = delayedTasksF.length/tasks.length * 100
 
-    const randomNumber = Math.floor(Math.random() * 100)
-    const randomNumber1 = Math.floor(Math.random() * 100)
-    const randomNumber2 = Math.floor(Math.random() * 100)
+    const randomNumber = Math.floor(Math.random() * 10)
+    const randomNumber1 = Math.floor(Math.random() * 10)
+    const randomNumber2 = Math.floor(Math.random() * 10)
 
     const CanvasJSChart = CanvasJSReact.CanvasJSChart;
     const options = {

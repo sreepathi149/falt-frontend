@@ -30,7 +30,7 @@ const Login=(props)=>{
 
         if(Object.keys(errors).length === 0) {
             const loader = async () => {
-                const response = await axios.post('https://falt.onrender.com/api/user/login', formData)
+                const response = await axios.post('http://localhost:4455/api/user/login', formData)
                 console.log(response.data)
                 if(response.data.hasOwnProperty("token")) {
                     Alert('Otp Sent Successfully','success', 'verify-login')

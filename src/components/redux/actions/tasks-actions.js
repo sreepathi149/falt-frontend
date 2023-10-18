@@ -3,7 +3,7 @@ import axios from 'axios'
 export const getTasks = () => {
     return async (dispatch) => {
         try {
-            const response = await axios.get('https://falt.onrender.com/api/tasks', {
+            const response = await axios.get('http://localhost:4455/api/tasks', {
                 headers: {
                     'authorization' : localStorage.getItem('token')
                 }
@@ -24,7 +24,7 @@ export const taskDelete = (id) => {
     return async (dispatch) => {
         try {
             console.log(id)
-            const response = await axios.delete(`https://falt.onrender.com/api/tasks-delete/${id}`, {
+            const response = await axios.delete(`http://localhost:4455/api/tasks-delete/${id}`, {
                 headers: {
                     'authorization' : localStorage.getItem('token')
                 }
@@ -44,7 +44,7 @@ const delTask = (id) => {
 export const taskEdit = (data) => {
     return async (dispatch) => {
         try {
-            const response = await axios.put(`https://falt.onrender.com/api/tasks-update/${data.id}`, data, {
+            const response = await axios.put(`http://localhost:4455/api/tasks-update/${data.id}`, data, {
                 headers: {
                     'authorization' : localStorage.getItem('token')
                 }
@@ -67,7 +67,7 @@ const editTask = (data) => {
 export const taskAdd = (data, resetForm) => {
     return async (dispatch) => {
         try{
-            const response = await axios.post('https://falt.onrender.com/api/tasks/create', data, {
+            const response = await axios.post('http://localhost:4455/api/tasks/create', data, {
                 headers: {
                     'authorization' : localStorage.getItem('token')
                 }
@@ -91,7 +91,7 @@ export const fieldUploads = (id, formData) => {
     return async (dispatch) => {
         try {
             console.log(formData)
-            const response = await axios.put(`https://falt.onrender.com/api/tasks-uploads/${id}`, formData, {
+            const response = await axios.put(`http://localhost:4455/api/tasks-uploads/${id}`, formData, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                     'authorization': localStorage.getItem('token')

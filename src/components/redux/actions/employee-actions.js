@@ -4,7 +4,7 @@ import { Alert } from '../../helpers/swal'
 export const getEmployees = () => {
     return async (dispatch) => {
         try {
-            const response = await axios.get('https://falt.onrender.com/api/employees', {
+            const response = await axios.get('http://localhost:4455/api/employees', {
                 headers: {
                     'authorization' : localStorage.getItem('token')
                 }
@@ -25,7 +25,7 @@ export const employeeDelete = (id) => {
     return async (dispatch) => {
         try {
             console.log(id)
-            const response = await axios.delete(`https://falt.onrender.com/api/employee-delete/${id}`, {
+            const response = await axios.delete(`http://localhost:4455/api/employee-delete/${id}`, {
                 headers: {
                     'authorization' : localStorage.getItem('token')
                 }
@@ -45,7 +45,7 @@ const delEmployee = (id) => {
 export const employeeEdit = (data) => {
     return async (dispatch) => {
         try {
-            const response = await axios.put(`https://falt.onrender.com/api/employee-update/${data.id}`, data, {
+            const response = await axios.put(`http://localhost:4455/api/employee-update/${data.id}`, data, {
                 headers: {
                     'authorization' : localStorage.getItem('token')
                 }
@@ -69,7 +69,7 @@ const editEmployee = (data) => {
 export const addEmployee = (data, resetForm) => {
     return async (dispatch) => {
         try{
-            const response = await axios.post('https://falt.onrender.com/api/employee/create', data, {
+            const response = await axios.post('http://localhost:4455/api/employee/create', data, {
                 headers: {
                     'authorization' : localStorage.getItem('token')
                 }

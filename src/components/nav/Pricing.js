@@ -11,7 +11,7 @@ const Pricing = () => {
           amount:price,
           day:days
         }]
-        axios.post("https://falt.onrender.com/api/user/payment", body)
+        axios.post("http://localhost:4455/api/user/payment", body)
         .then((res)=>{
             if(res.data.url) {
                 

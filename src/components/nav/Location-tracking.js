@@ -11,7 +11,7 @@ const Tracking = () => {
         {!localStorage.getItem('token') && <Container fluid>
           <Row>
             <Col className='col-sm-6 mt-5'>
-              <p className='text-center' style={{fontSize:"30px"}}><IoLocationSharp></IoLocationSharp>Live <strong style={{color:"red"}}>Tracking</strong></p>
+              <p className='text-center' style={{fontSize:"30px"}}><IoLocationSharp></IoLocationSharp>Location <strong style={{color:"red"}}>Tracking</strong></p>
               <br></br>
               <p className='text-left d-flex justify-content-center flex-column' style={{padding:"5px"}}>Manage, 
               Track and Collaborate with field personnel to improve productivity and efficiency to achieve end customer satisfaction.

@@ -3,7 +3,7 @@ import axios from 'axios'
 export const getCategories = () => {
     return async (dispatch) => {
         try {
-            const response = await axios.get('https://falt.onrender.com/api/categories', {
+            const response = await axios.get('http://localhost:4455/api/categories', {
                 headers: {
                     'authorization' : localStorage.getItem('token')
                 }
@@ -24,7 +24,7 @@ export const categoryDelete = (id) => {
     return async (dispatch) => {
         try {
             console.log(id)
-            const response = await axios.delete(`https://falt.onrender.com/api/category-delete/${id}`, {
+            const response = await axios.delete(`http://localhost:4455/api/category-delete/${id}`, {
                 headers: {
                     'authorization' : localStorage.getItem('token')
                 }
@@ -44,7 +44,7 @@ const delCategory = (id) => {
 export const categoryEdit = (data) => {
     return async (dispatch) => {
         try {
-            const response = await axios.put(`https://falt.onrender.com/api/category-update/${data.id}`, data, {
+            const response = await axios.put(`http://localhost:4455/api/category-update/${data.id}`, data, {
                 headers: {
                     'authorization' : localStorage.getItem('token')
                 }
@@ -68,7 +68,7 @@ const editCategory = (data) => {
 export const categoryAdd = (data, resetForm) => {
     return async (dispatch) => {
         try{
-            const response = await axios.post('https://falt.onrender.com/api/category/create', data, {
+            const response = await axios.post('http://localhost:4455/api/category/create', data, {
                 headers: {
                     'authorization' : localStorage.getItem('token')
                 }
@@ -92,7 +92,7 @@ const addCategory = (data) => {
 export const getClients = () => {
     return async (dispatch) => {
         try {
-            const response = await axios.get('https://falt.onrender.com/api/clients', {
+            const response = await axios.get('http://localhost:4455/api/clients', {
                 headers: {
                     'authorization' : localStorage.getItem('token')
                 }
@@ -113,7 +113,7 @@ export const clientDelete = (id) => {
     return async (dispatch) => {
         try {
             //console.log(id)
-            const response = await axios.delete(`https://falt.onrender.com/api/client-delete/${id}`, {
+            const response = await axios.delete(`http://localhost:4455/api/client-delete/${id}`, {
                 headers: {
                     'authorization' : localStorage.getItem('token')
                 }
@@ -133,7 +133,7 @@ const delClient = (id) => {
 export const clientEdit = (data) => {
     return async (dispatch) => {
         try {
-            const response = await axios.put(`https://falt.onrender.com/api/client-update/${data.id}`, data, {
+            const response = await axios.put(`http://localhost:4455/api/client-update/${data.id}`, data, {
                 headers: {
                     'authorization' : localStorage.getItem('token')
                 }
@@ -156,7 +156,7 @@ const editClient = (data) => {
 export const clientAdd = (data, resetForm) => {
     return async (dispatch) => {
         try{
-            const response = await axios.post('https://falt.onrender.com/api/client/register', data, {
+            const response = await axios.post('http://localhost:4455/api/client/register', data, {
                 headers: {
                     'authorization' : localStorage.getItem('token')
                 }
